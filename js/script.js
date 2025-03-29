@@ -1,41 +1,69 @@
 function calculate() {  
     try {
         let weightInput = document.getElementById('weight-input');
-        console.log(weightInput.value);
-            var heightInput = document.getElementById('height-input');
-            console.log(heightInput.value);
-                 var resultElement = document.getElementById('result-input');
-                 let result = +weightInput.value/(+heightInput.value*+heightInput.value);
-                 resultElement.innerHTML = result;
-                      if (result <18.5) {
-                      console.log('Kekurangan Berat badan');
-                      } else if (result >=18.5 && result <24.9) {
-                        console.log('normal(ideal)');
-                      } else if (result >=25.0 && result <29.9) {
-                        console.log('Kelebihan berat badan');
-                      } else if (result >=30.0) {
-                        console.log('Kegemukan(Obesitas)');
-                      }
-        if (weightInput.value === ''||heightInput.value === '') {
-            console.log('fail');
-            alert('weight/height an not be Empty');
-        } else {
-            console.log('succeed');
+        let heightInput = document.getElementById('height-input');
+        let resultElement = document.getElementById('result-input');
+        let categoryElement = document.getElementById('bmi-category'); 
+        let solutionElement = document.getElementById('bmi-solution');
+
+        // Validasi input kosong sebelum perhitungan
+        if (weightInput.value === '' || heightInput.value === '') {
+            alert('Weight/Height cannot be empty');
+            return;
         }
+
+        let weight = parseFloat(weightInput.value);
+        let height = parseFloat(heightInput.value) / 100; // Ubah cm ke meter
+
+        if (height <= 0) {
+            alert('Height must be greater than 0');
+            return;
+        }
+
+        let result = weight / (height * height);
+        resultElement.innerHTML = result.toFixed(2); // Tampilkan hasil BMI dengan 2 angka desimal
+
+        let category = '';
+        let solution = '';
+
+        // Hitung berat badan ideal berdasarkan BMI normal (18.5 - 24.9)
+        let idealMinWeight = (18.5 * height * height).toFixed(1);
+        let idealMaxWeight = (24.9 * height * height).toFixed(1);
+    
+        if (result < 18.5) {
+            category = 'Kekurangan Berat Badan';
+            solution = `Anda disarankan untuk menambah berat badan hingga minimal ${idealMinWeight} kg.`;
+        } else if (result >= 18.5 && result < 24.9) {
+            category = 'Normal (Ideal)';
+            solution = `Berat badan Anda sudah ideal! Pertahankan di kisaran ${idealMinWeight} - ${idealMaxWeight} kg.`;
+        } else if (result >= 25.0 && result < 29.9) {
+            category = 'Kelebihan Berat Badan';
+            solution = `Anda disarankan untuk mengurangi berat badan hingga maksimal ${idealMaxWeight} kg.`;
+        } else {
+            category = 'Kegemukan (Obesitas)';
+            solution = `Anda sangat disarankan untuk menurunkan berat badan hingga di bawah ${idealMaxWeight} kg.`;
+        }
+
+        // Tampilkan kategori di bawah hasil BMI
+        categoryElement.innerHTML = `Kategori : <strong>${category}</strong>`;
+        solutionElement.innerHTML = `Saran : <strong>${solution}</strong>`;
+
+        console.log(`BMI: ${result.toFixed(2)}, Kategori: ${category}, Saran: ${solution}`);
     } catch (error) {
         console.log(error);
     }
 }
 
 function reset() {
-  
-  let resetButton = document.getElementById('reset-button');
-  console.log(resetButton.value);
-      var weight = document.getElementById('weight-input');
-      var height = document.getElementById('height-input');
-      var result = document.getElementById('result-input');
+    let weight = document.getElementById('weight-input');
+    let height = document.getElementById('height-input');
+    let result = document.getElementById('result-input');
+    let categoryElement = document.getElementById('bmi-category');
+    let solutionElement = document.getElementById('bmi-solution'); 
 
-       weight.innerHTML = '';
-       height.innerHTML = '';
-       result.innerHTML = '';
-}     
+    weight.value = '0';  // Reset input berat ke kosong
+    height.value = '0';  // Reset input tinggi ke kosong
+    result.innerHTML = '0'; // Reset hasil BMI
+    categoryElement.innerHTML = 'Kategori Anda'; 
+    solutionElement.innerHTML = 'Saran untuk Anda'; 
+}
