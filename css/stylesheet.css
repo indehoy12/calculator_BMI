@@ -1,0 +1,287 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 4px solid #0056b3;
+  animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  animation: slideInFromTop 1s ease-out;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Main Container Styles */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.container-item {
+  width: 48%;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container-item h2 {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form Styles */
+.container-form {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-form > div {
+  margin-bottom: 20px;
+}
+
+.container-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.container-form input[type="text"],
+.container-form input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.3s, background-color 0.3s ease;
+}
+
+.container-form input[type="text"]:focus,
+.container-form input[type="number"]:focus {
+  border: 2px solid #007bff;
+  outline: none;
+  background-color: #e9f7fd;
+}
+
+/* Calculate Button */
+#calculate-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#calculate-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Reset Button Styles */
+#reset-button {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 15px 0;
+}
+
+#reset-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Result Section */
+.container-result {
+  background-color: #e9f7fd;
+  text-align: center;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.container-result h4 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.container-result h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.container-result p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Button Styles */
+#download-button,
+.button-consult,
+.button-regist,
+#aplication,
+#online {
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 15px 0;
+}
+
+#download-button:hover,
+.button-consult:hover,
+.button-regist:hover,
+#aplication:hover,
+#online:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Diabet Section */
+.diabet {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.diabet p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container-item {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .container-form {
+    padding: 20px;
+  }
+
+  #calculate-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  button {
+    width: 100%;
+    height: 50px;
+  }
+
+  .container-item {
+    padding: 20px;
+  }
+}

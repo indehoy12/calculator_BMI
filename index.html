@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator BMI</title>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Mini Project FIYAN</h1>
+    </header>
+    <main>
+      <div class="main-container">
+        <!-- Form Display -->
+        <div class="container-item">
+          <h2>Kalkulator BMI</h2>
+          <section>
+            <p>
+              Berat Badan Ideal adalah impian semua orang. Tidak hanya memiliki
+              bentuk tubuh yang menunjang penampilan, berat badan ideal juga
+              menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk,
+              hitung sekarang di Kalkulator BMI.
+            </p>
+          </section>
+          <section class="container-form">
+            <div>
+              <label>Jenis Kelamin</label><br />
+              <input type="radio" name="sex" id="sex-man" />
+              <label for="sex-man">Laki-Laki</label>
+              <input type="radio" name="sex" id="sex-woman" />
+              <label for="sex-woman">Perempuan</label>
+            </div>
+            <div>
+              <label>Berat Badan(kg)</label><br />
+              <i class="fa fa-pencil"></i>
+              <input type="text" id="weight-input" placeholder="0" />
+            </div>
+            <div>
+              <label>Usia(tahun)</label><br />
+              <i class="fa fa-pencil"></i>
+              <input type="number" />
+            </div>
+            <div>
+              <label>Tinggi badan(cm)</label><br />
+              <i class="fa fa-pencil"></i>
+              <input type="text" id="height-input" placeholder="0" />
+            </div>
+            <div>
+              <button type="button" id="calculate-button" onclick="calculate()">
+                Hitung BMI
+              </button>
+              <button type="button" id="reset-button" onclick="reset()">
+                Reset
+              </button>
+            </div>
+          </section>
+          <section>
+            <h4>Keunggulan Fitur</h4>
+            <ol>
+              <li>Menghitung Berat Badan</li>
+              <li>Menentukan kategori berat badan ideal atau tidak</li>
+              <li>Mempersiapkan program penurunan berat badan</li>
+            </ol>
+            <p>
+              Keunggulan ini hanya boleh digunakan oleh orang dewasa(wanita
+              hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini)
+              dan tidak ada tindakan yang harus diambil berdasarkan nilainya
+              selain berkonsultasi dengan orang yang memenuhi syarat seperti
+              dokter.
+            </p>
+            <p>
+              Kalkulator akan memberi Anda gambaran tentang perbandingan berat
+              badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI)
+              dihitung sebagi berat badan Anda dalam(kilogram) dibagi dengan
+              kuadrat tinggi badan Anda(dalam meter) atau BMI=Kg/M<sup>2</sup>.
+            </p>
+          </section>
+        </div>
+        <!-- Result Display -->
+        <div class="container-item">
+          <h2>Hasil</h2>
+          <section class="container-result">
+            <h4 id="bmi-category">Kategori Anda</h4>
+            <h1 id="result-input">0</h1>
+            <h4 id="bmi-solution">Saran untuk Anda</h4>
+            <button type="button" id="download-button">
+              Download Hasil BMI
+            </button>
+          </section>
+          <section>
+            <h4>Hasil BMI diantara 23 dan 25</h4>
+            <p>
+              Anda berada dalam kategori overweight atau berat badan
+              berlebih.Cara terbaik untuk menurunkan berat badan adalah dengan
+              mengatur kalor makanan yang dikonsumsi dan berolahraga.<br />
+              Jika BMI Anda berada dalam kategori ini maka Anda dianjurkan untuk
+              menurunkan berat badan hingga batas normal.
+            </p>
+            <section>
+              <button class="button-consult" type="button">
+                Konsultasi Ahli Gizi Via Aplikasi
+              </button>
+              <button class="button-regist" type="button">
+                Registrasi Online Ahli Gizi
+              </button>
+            </section>
+            <section>
+              <p>
+                BMI tidak sepenuhnya mewakilik diagnosis menyeluruh dari
+                kesehatan tubuh dan resiko penyakit seseorang. Anda perlu
+                konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda
+                terkait dengan berat badan Anda.
+              </p>
+            </section>
+            <section class="diabet">
+              <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+              <p>Diabetes</p>
+              <p>Hipertensi</p>
+              <p>Sakit jantung</p>
+              <p>Osteoarthritis</p>
+              <button id="aplication" type="button">
+                Konsultasi Dokter Via Aplikasi
+              </button>
+              <button id="online" type="button">
+                Registrasi Online Sekarang
+              </button>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
